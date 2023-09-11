@@ -1,0 +1,62 @@
+<div class="offcanvas offcanvas-start" tab-index="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasLabel">Pages handler</h5>
+		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		Content for the offcanvas goes here.
+	</div>
+</div>
+
+<button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"> <span class="bi-list"></span>
+  Options
+</button>
+
+<form method="post">
+	<span class="font-size-xs">Add a page to your app</span>
+	<div class="mb-3">
+		<label for="title" class="form-label">Page title</label>
+		<input type="text" class="form-control" id="pageTitleInput" required="" name="title">
+	</div>
+	<div class="mb-3 form-floating">
+		<input type="text" class="form-control" id="pageNameInput" required="" name="name" onkeyup="page_name_validator('pageNameInput')">
+		<!-- 
+			add the class is-valid when the user input is correct 
+			add the class is-invalid when the user input is incorrect
+		-->
+		<label for="name" class="form-label">Page name</label>
+		<p class="form-text">
+			*The page name should be in lower case and should not contain any space!
+		</p>
+		<p class="valid-feedback">
+			Page name is correct!
+		</p>
+		<p class="invalid-feedback">
+			Page name is incorrect!
+		</p>
+	</div>
+	<div class="mb-3 form-check">
+		<label for="cssFile" class="form-label">Has CSS file</label>
+		<input type="checkbox" class="form-check-input" id="pageHasCssInput" name="cssFile">
+	</div>
+	<hr>
+	<div class="mb-3">
+		<span class="font-size-xxs">POST and GET instructions</span>
+		<p class="form-text">
+			*These instructions should be written without the res variable. Focus only on the query, params or the body. You should write instructions that will manipulate the data transiting into your page.
+		</p>
+	</div>
+	<div class="mb-3">
+		<label for="postInstructions">Add POST method instructions</label>
+		<textarea type="text" id="post-method-instructions" class="form-control text-white bg-dark hasCode" rows="20" name="postInstructions"></textarea>
+	</div>
+	<div class="mb-3">
+		<label for="getInstructions">Add GET method instruction</label>
+		<textarea type="text" id="get-method-instructions" class="form-control text-white bg-dark hasCode" rows="20" name="getInstructions"></textarea>
+	</div>
+	<div class="mb-3">
+		<button type="submit" class="btn btn-primary rounded-5">Create page</button>
+	</div>
+</form>
+
+<script src="js/appdev.js"></script>

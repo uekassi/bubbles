@@ -1,0 +1,19 @@
+<%- include("components/head") %>
+
+<div class="h-100 w-100">
+	<div class="bg-white">
+		<%- include("components/header") %>
+	</div>
+	<div class="form p-4 bg-white">
+		<div class="mb-3">
+			<input type="text" placeholder="Title" name="title" onchange="setDateAndTime()" id="title">
+			<p class="form-text fst-italic" id="currentDate">The current date</p>
+		</div>
+		<div class="content-area">
+			<div class="visual-view" contenteditable="true"></div>
+			<textarea class="html-view" id="content"></textarea>
+		</div>
+	</div>
+</div>
+
+<%- include("components/foot") %>

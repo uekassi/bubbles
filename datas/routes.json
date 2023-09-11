@@ -1,0 +1,35 @@
+[
+  {
+    "pagePath": "/",
+    "renderPage": "index",
+    "title": "Bubbles",
+    "module": "",
+    "cssFile": "",
+    "postInstructions": "",
+    "getInstructions": ""
+  },
+  {
+    "pagePath": "/appdev",
+    "renderPage": "pages/appdev",
+    "title": "Develop your app",
+    "module": "appdev",
+    "cssFile": "appdev",
+    "postInstructions": "",
+    "getInstructions": ""
+  },
+  {
+    "pagePath": "/tyli"
+  },
+  {
+    "pagePath": "/tyli/login",
+    "renderPage": "apps/tyli/login",
+    "title": "Tily - Note editor",
+    "cssFile": "login"
+  },
+  {
+    "pagePath": "/tyli/editor",
+    "renderPage": "apps/tyli/editor",
+    "title": "Tily - It's time for you to edit!",
+    "cssFile": "editor"
+  }
+]

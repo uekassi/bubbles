@@ -1,0 +1,21 @@
+<%- include("components/head") %>
+
+
+<div class="h-100 w-100 center bg-black">
+	<form method="post" class="p-4 bg-white rounded-2">
+		<h1 class="font-size-xs">Log in</h1>
+		<div class="mb-3">
+			<label class="form-label" for="username">Username</label>
+			<input class="form-control" type="text" name="username" value="" placeholder="tyliusername">
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="password">Password</label>
+			<input class="form-control" type="password" name="password" value="" placeholder="tylipassword">
+		</div>
+		<div>
+			<button type="submit" class="btn btn-success">Log in</button>
+		</div>
+	</form>
+</div>
+
+<%- include("components/foot") %>

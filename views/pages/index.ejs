@@ -1,0 +1,57 @@
+<%- include('../partials/head') %>
+
+<% const app_values = [
+	{
+		icon: 'bi-bar-chart-fill',
+		badge_color: 'bg-danger',
+		text: 'Une progression simple et efficace sans effort!'
+	},
+	{
+		icon: 'bi-calendar-event-fill',
+		badge_color: 'bg-warning',
+		text: 'Respectez vos deadlines et planifier de meilleures actions marketing et de communication!'
+	},
+	{
+		icon: 'bi-chat-square-text-fill',
+		badge_color: 'bg-success',
+		text: 'Communiquer mieux et plus rapidement avec vos prospects!'
+	}
+] %>
+
+<div class="homebg">
+	<div class="h-100 w-100 center" style="color: white; background-color: rgba(0, 0, 0, 0.9);  padding: 20px;">
+		<div>
+			<div class="w-100 center">
+				<h1 class="text-center">My <span class="font-size-lg" style="color: orange;">Marketing</span> helper</h1>
+			</div>
+			<div class="w-100 center">
+				<p class="text-wrap w-50 text-center">
+					Prenez des décisions marketing plus rapidement et menez toutes vos actions marketing et de communicatione en toute sérénité!
+				</p>
+			</div>
+			<div class="w-100 center">
+				<a href="/login" class="btn btn-primary rounded-5">Commencer</a>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="w-100 center">
+				<div class="container row">
+					<% app_values.forEach((app_value) => { %>
+						<div class="col-md-4">
+							<div>
+								<h1 class="font-size-xs badge <%= app_value.badge_color %> bg-opacity-50"><span class="<%= app_value.icon %>"></span></h1>
+								<p class="text-wrap w-75">
+									<%= app_value.text %>
+								</p>
+							</div>
+						</div>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/foot') %>
+

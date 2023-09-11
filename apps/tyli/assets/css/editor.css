@@ -1,0 +1,50 @@
+input[name="title"]{
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid black;
+	background-color: transparent;
+	font-size: 2rem;
+}
+input[name="title"]:focus {
+	outline: none;
+}
+input[type="color"]{
+	height: 10px;
+	outline: none;
+	border: none;
+}
+input[type="file"]{
+
+}
+.form {
+	height: 85%;
+	overflow-y: auto;
+}
+
+select[name="text-size"], select[name="text-font-family"] {
+	border-color: lightgray;
+	border-radius: 0px;
+}
+
+.visual-view{
+	border: 2px solid orange;
+}
+.visual-view:focus{
+}
+.html-view {
+	width: 100%;
+}
+.html-view:focus{
+}
+
+.style-btn {
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+.activate {
+	color: white;
+	background-color: black;
+}
