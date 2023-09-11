@@ -7,8 +7,8 @@ let months = ["january", "february", "march", "april", "may", "june", "july", "a
 
 function saveNote(){
 	let title = document.getElementById("title").value;
-	let content = document.getElementById("content").value;
-	console.log(`The title of the note is ${title} and the content is ${content}`);
+	let content = document.getElementById("content").innerHTML;
+	alert(`The title of the note is ${title} and the content is ${content}`);
 }
 
 function setDateAndTime(){
@@ -18,8 +18,7 @@ function setDateAndTime(){
 	let day = date.getDay();
 	let year = date.getFullYear();
 	let time = date.getHours() + ":"+date.getMinutes();
-	currentDate.innerHtml = days[day]+","+" "+date.getDate()+" "+months[month]+" "+year+" "+time;
-	alert(`${days[day]}, ${date.getDate()} ${months[month]} ${year} at ${time}`);
+	currentDate.innerHTML = `${days[day]}, ${date.getDate()} ${months[month]} ${year} at ${time}`;
 }
 
 let selection;

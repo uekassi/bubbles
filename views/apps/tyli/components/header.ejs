@@ -1,6 +1,6 @@
 <%
 	const defaultTextSizes = ["11", "12", "14", "16", "18", "20", "22", "24", "28", "32", "36", "40", "44", "48", "60", "72"];
-	const fontFamilies = ["calibri", "century gothic"];
+	const fontFamilies = ["Calibri", "Century gothic", "Times New Roman", "Arial", "Arial black", "Century", "Consolas", "Corbel", "Ebrima", "Forte", "Gadugi", "Lucida Console", "Lucida Bright", "Lucida Fax", "Lucida Calligraphy"];
 %>
 
 <div class="offcanvas offcanvas-start" tab-index="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
@@ -17,6 +17,23 @@
 			<span class="bi-folder-plus"></span>
 			<span class="d-none d-md-inline"> Add to a folder</span>
 		</button>
+		<hr>
+		<div>
+			<h6>Here are your latest notes</h6>
+			<div class="me-2">
+				<li class="nav-item dropdown">
+		          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            Dropdown
+		          </a>
+		          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+		            <li><a class="dropdown-item" href="#">Action</a></li>
+		            <li><a class="dropdown-item" href="#">Another action</a></li>
+		            <li><hr class="dropdown-divider"></li>
+		            <li><a class="dropdown-item" href="#">Something else here</a></li>
+		          </ul>
+		        </li>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -27,6 +44,10 @@
 			<span class="bi-files"></span>
 			<span class="d-none d-md-inline"> File</span>
 		</button>
+		<button class="btn btn-sm btn-primary me-2" onclick="saveNote()">
+			<span class="bi-save"></span>
+			<span class="d-none d-md-inline"> save</span>
+		</button>
 	</div>
 	<div class="w-100">
 		<div class="d-flex flex-row overflow-x-auto" style="min-width: 100%">
@@ -34,7 +55,7 @@
 				<select name="text-font-family" id="text-font-family" onchange="changeFontFamily()" >
 					<optgroup>
 						<% fontFamilies.forEach((font) => { %>
-							<option value="<%= font %>"><%= font %></option>
+							<option value="<%= font %>" style="font-family: <%= font %>"><%= font %></option>
 						<% }) %>
 					</optgroup>
 				</select>
