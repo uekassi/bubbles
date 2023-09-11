@@ -2,12 +2,13 @@
 	const defaultTextSizes = ["11", "12", "14", "16", "18", "20", "22", "24", "28", "32", "36", "40", "44", "48", "60", "72"];
 	const fontFamilies = ["calibri", "century gothic"];
 %>
-<div class="w-100 p-3">
-	<div class="d-flex flex-row mb-3">
-		<button class="btn btn-sm btn-primary me-2" onclick="saveNote()">
-			<span class="bi-save"></span>
-			<span class="d-none d-md-inline"> Save</span>
-		</button>
+
+<div class="offcanvas offcanvas-start" tab-index="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasLabel">Tyli - Note editor</h5>
+		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
 		<button class="btn btn-sm btn-primary me-2">
 			<span class="bi-pencil-square"></span>
 			<span class="d-none d-md-inline"> Add note</span>
@@ -15,6 +16,16 @@
 		<button class="btn btn-sm btn-primary me-2">
 			<span class="bi-folder-plus"></span>
 			<span class="d-none d-md-inline"> Add to a folder</span>
+		</button>
+	</div>
+</div>
+
+
+<div class="w-100 p-3">
+	<div class="d-flex flex-row mb-3">
+		<button class="btn btn-sm btn-primary me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+			<span class="bi-files"></span>
+			<span class="d-none d-md-inline"> File</span>
 		</button>
 	</div>
 	<div class="w-100">
@@ -41,7 +52,7 @@
 			<button class="style-btn me-2" data-action="italic" id="text-italic" data-tag-name="" data-style="" onclick="textToItalic()">
 				<span class="bi-type-italic"></span>
 			</button>
-			<button class="style-btn me-2" data-action="underline"  id="text-underline" onclick="">
+			<button class="style-btn me-2" data-action="underline"  id="text-underline" onclick="underlineText()">
 				<span class="bi-type-underline"></span>
 			</button>
 			<div class="d-flex flex-column me-2">

@@ -28,9 +28,11 @@ select[name="text-size"], select[name="text-font-family"] {
 }
 
 .visual-view{
-	border: 2px solid orange;
+	
 }
 .visual-view:focus{
+	border: none;
+	outline: none;
 }
 .html-view {
 	width: 100%;
