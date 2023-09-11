@@ -36,4 +36,4 @@ app.use(express.static(path.join(__dirname, "app_modules")));
 router.load(app);
 
 
-app.listen(PORT, () => console.log(`App server currently running on port ${PORT}`));
+app.listen(process.env.PORT || PORT, () => console.log(`App server currently running on port ${PORT}`));
