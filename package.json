@@ -4,8 +4,8 @@
   "description": "This is a frontend node package",
   "main": "app.js",
   "engines": {
-      "node": "14.x"
-    },
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
@@ -15,6 +15,7 @@
   "author": "Ulrich EKASSI",
   "license": "ISC",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "boostrap": "^2.0.0",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",

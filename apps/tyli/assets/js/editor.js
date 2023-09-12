@@ -8,7 +8,8 @@ let months = ["january", "february", "march", "april", "may", "june", "july", "a
 function saveNote(){
 	let title = document.getElementById("title").value;
 	let content = document.getElementById("content").innerHTML;
-	alert(`The title of the note is ${title} and the content is ${content}`);
+	document.getElementById("noteTitle").value = title;
+	document.getElementById("noteContent").value = content;
 }
 
 function setDateAndTime(){

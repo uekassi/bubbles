@@ -1,7 +1,1 @@
-[
-	{
-		"id": id,
-		"name": value,
-		"content": content
-	}
-]
+[{"noteFolder":"Histoire","noteTitle":"Ma note","noteContent":"Je suis en train de saisir une nouvelle note!"},{"noteFolder":"Histoire","noteTitle":"My title","noteContent":"This is just a text to show the adding note part!"},{"noteFolder":"Histoire","noteTitle":"My title","noteContent":"This is just a text to show the adding note part!"},{"noteFolder":"Choses à faire","noteTitle":"Note 1","noteContent":"<font size=\"7\" face=\"Century gothic\"><b>Liste des choses à faire</b></font> :<div>- rendre visite&nbsp;</div><div>- tâche 2</div><div>- tâche 3</div>"}]

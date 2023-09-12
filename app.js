@@ -3,8 +3,7 @@ const path = require('path');
 
 const router = require("./modules/router/index.js")
 
-//importing integrated apps
-const tyli = require("./apps/tyli/index.js");
+
 
 const app = express();
 const PORT = 3000;

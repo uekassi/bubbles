@@ -9,29 +9,25 @@
 		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	</div>
 	<div class="offcanvas-body">
-		<button class="btn btn-sm btn-primary me-2">
-			<span class="bi-pencil-square"></span>
-			<span class="d-none d-md-inline"> Add note</span>
-		</button>
-		<button class="btn btn-sm btn-primary me-2">
-			<span class="bi-folder-plus"></span>
-			<span class="d-none d-md-inline"> Add to a folder</span>
-		</button>
+		<form action="" method="put" class="d-flex flex-row">
+			<input type="text" class="form-control mr-2" placeholder="Folder name">
+			<button class="btn btn-sm btn-danger">
+				<span class="bi-folder-minus"></span>
+				<span class="d-none d-md-inline"> Delete folder</span>
+			</button>
+		</form>
 		<hr>
 		<div>
 			<h6>Here are your latest notes</h6>
-			<div class="me-2">
-				<li class="nav-item dropdown">
-		          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		            Dropdown
-		          </a>
-		          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-		            <li><a class="dropdown-item" href="#">Action</a></li>
-		            <li><a class="dropdown-item" href="#">Another action</a></li>
-		            <li><hr class="dropdown-divider"></li>
-		            <li><a class="dropdown-item" href="#">Something else here</a></li>
-		          </ul>
-		        </li>
+			<div class="d-flex flex-column p-4">
+				<% notes.forEach((note) => {%>
+					<div class="d-flex d-row mb-3" role="group">
+					  <button class="btn btn-secondary rounded-0">
+					  	<span class="bi-trash"></span>
+					  </button>
+					  <button class="btn btn-primary rounded-0"><%= note.noteTitle %></button>
+					</div>
+				<% }) %>
 			</div>
 		</div>
 	</div>
@@ -44,10 +40,15 @@
 			<span class="bi-files"></span>
 			<span class="d-none d-md-inline"> File</span>
 		</button>
-		<button class="btn btn-sm btn-primary me-2" onclick="saveNote()">
-			<span class="bi-save"></span>
-			<span class="d-none d-md-inline"> save</span>
-		</button>
+		<form method="post" class="d-flex flex-row me-2">
+			<input type="text" class="form-control form-control-sm" placeholder="Nom dossier" name="noteFolder" required>
+			<input type="hidden" name="noteTitle" value="" id="noteTitle">
+			<input type="hidden" name="noteContent" value="" id="noteContent">
+			<button class="btn btn-sm btn-primary" onclick="saveNote()" type="submit">
+				<span class="bi-save"></span>
+				<span class="d-none d-md-inline"> save</span>
+			</button>
+		</form>
 	</div>
 	<div class="w-100">
 		<div class="d-flex flex-row overflow-x-auto" style="min-width: 100%">
@@ -78,7 +79,7 @@
 			</button>
 			<div class="d-flex flex-column me-2">
 				<span class="fs-6 bi-fonts text-center"></span>
-				<input id="text-color" type="color" name="" value="" placeholder="" onchange="changeColor()">
+				<input id="text-color" type="color" name="" placeholder="" onchange="changeColor()">
 			</div>
 			<div class="d-flex flex-row">
 				<div class="style-btn me-2 center">

@@ -1,5 +1,9 @@
 const load = (app) => {
+	//importing integrated apps
+	const tyli = require("../../apps/tyli/index.js");
+
 	const appRoutes = require("../../datas/routes.json");
+	const notesData = require("../../apps/tyli/datas/notes.json");
 	let uidExist = false;
 
 	//routes middleware
@@ -33,7 +37,16 @@ const load = (app) => {
 					cssFile: appRoute.cssFile
 				});
 			})
-		}else {
+		}else if(appRoute.pagePath === "/tyli/editor"){
+			app.get(appRoute.pagePath, (req, res) => {
+				res.render(appRoute.renderPage, {
+					title: appRoute.title,
+					cssFile: appRoute.cssFile,
+					notes: notesData
+				});
+			})
+		}
+		else {
 			app.get(appRoute.pagePath, (req, res) => {
 				let uid = req.query.uid;
 				
@@ -64,6 +77,9 @@ const load = (app) => {
 	app.post("/tyli/login", (req, res) => {
 		console.log(req.body);
 		res.redirect("/tyli/dashboard")
+	})
+	app.post("/tyli/editor", (req, res) => {
+		tyli.addnote(req, res);
 	})
 }
 
